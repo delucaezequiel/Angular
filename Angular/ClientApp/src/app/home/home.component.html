@@ -12,3 +12,25 @@
   <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
 </ul>
 <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+<div>
+  <h3>Examples</h3>
+  <input type="text" [(ngModel)]="input"><br>
+  <p>{{input}}</p>
+  <input type="text"
+         class="form-control"
+         (input)="onInput($event)">
+  <p>{{text}}</p>
+  <button class="btn btn-primary"
+          [disabled]="!add"
+          (click)="onClick()">
+    Add
+  </button>
+  <p *ngIf="status === 'Added'; else elseCondition" [ngClass]="{'alert alert-success': true}">{{status}} Success</p>
+  <ng-template #elseCondition>
+    <p [ngStyle]="{'background-color': 'red'}">{{status}} Failure</p>
+  </ng-template>
+  <app-warning *ngFor="let element of list"></app-warning>
+  <app-error></app-error><br>
+  <app-success></app-success><br>
+  <app-warning></app-warning>
+</div>

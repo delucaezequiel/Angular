@@ -9,6 +9,18 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { ErrorComponent } from './error/error.component';
+import { SuccessComponent } from './success/success.component';
+import { WarningComponent } from './warning/warning.component';
+
+import { Home2Component } from './home2/home2.component';
+import { HeaderComponent } from './home2/header/header.component';
+import { RecipesComponent } from './home2/recipes/recipes.component';
+import { RecipeListComponent } from './home2/recipes/recipe-list/recipe-list.component';
+import { RecipeDetailsComponent } from './home2/recipes/recipe-details/recipe-details.component';
+import { RecipeItemComponent } from './home2/recipes/recipe-list/recipe-item/recipe-item.component';
+import { ShoppingListComponent } from './home2/shopping-list/sthopping-list.component';
+import { ShoppingEditComponent } from './home2/shopping-list/shopping-edit/sthopping-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +28,18 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    ErrorComponent,
+    SuccessComponent,
+    WarningComponent,
+    Home2Component,
+    HeaderComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailsComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
