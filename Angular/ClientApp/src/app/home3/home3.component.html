@@ -1,0 +1,11 @@
+<app-home3-game-control (intervalTriggered)="intervalTriggered($event)"></app-home3-game-control>
+<app-home3-odd
+  *ngFor="let number of odd"
+  [number]="number">
+</app-home3-odd>
+<app-home3-even
+  *ngFor="let number of even"
+  [number]="number">
+</app-home3-even>
+<p appBasicHighlight>Style me with basic directive</p>
+<p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with better directive</p>

@@ -14,10 +14,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.11" />
-    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.2.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,12 +25,32 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\home2\recipes\recipe.model.ts" />
+    <None Remove="ClientApp\src\app\home2\recipes\recipe.service.ts" />
+    <None Remove="ClientApp\src\app\home2\shared\dropdown.directive.ts" />
     <None Remove="ClientApp\src\app\home2\shared\ingredient.model.ts" />
+    <None Remove="ClientApp\src\app\home2\shopping-list\shopping-list.service.ts" />
+    <None Remove="ClientApp\src\app\home3\directives\basic-highlight\basic-highlight.directive.ts" />
+    <None Remove="ClientApp\src\app\home3\directives\better-highlight\better-highlight.directive.ts" />
+    <None Remove="ClientApp\src\app\home3\directives\unless\unless.directive.ts" />
+    <None Remove="ClientApp\src\app\home4\services\counter.service.ts" />
+    <None Remove="ClientApp\src\app\home4\services\user.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\home2\recipes\recipe.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home2\recipes\recipe.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home2\shared\dropdown.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home2\shared\ingredient.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home2\shopping-list\shopping-list.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home3\directives\unless\unless.directive.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\home3\directives\better-highlight\better-highlight.directive.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\home3\directives\basic-highlight\basic-highlight.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home4\services\counter.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home4\services\user.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
@@ -64,5 +80,21 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 
 </Project>

@@ -20,6 +20,8 @@
          class="form-control"
          (input)="onInput($event)">
   <p>{{text}}</p>
+  <input type="text" #inputId>
+  <p>inputId.value</p>
   <button class="btn btn-primary"
           [disabled]="!add"
           (click)="onClick()">
@@ -30,6 +32,14 @@
     <p [ngStyle]="{'background-color': 'red'}">{{status}} Failure</p>
   </ng-template>
   <app-warning *ngFor="let element of list"></app-warning>
+  <div [ngSwitch]="value">
+    <p ngSwitchCase="a">A</p>
+    <p ngSwitchCase="b">B</p>
+    <p ngSwitchCase="c">C</p>
+    <p ngSwitchCase="d">D</p>
+    <p ngSwitchCase="e">E</p>
+    <p ngSwitchDefault>No match found</p>
+  </div>
   <app-error></app-error><br>
   <app-success></app-success><br>
   <app-warning></app-warning>

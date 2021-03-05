@@ -6,4 +6,9 @@ import { Component, OnInit } from '@angular/core';
   })
 export class Home2Component
 {
+  feature: string = 'recipe'
+  navigate(feature: string)
+  {
+    this.feature = feature;
+  }
 }

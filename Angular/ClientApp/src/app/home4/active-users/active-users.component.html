@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Active Users</h1>
+  <div class="row" *ngFor="let user of users, let i = index">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+          {{user}} | <a href="#" (click)="deactivate(i)">Set to Inactive</a>
+     </div>
+  </div>
+</div>
+
