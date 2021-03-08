@@ -2,50 +2,72 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
+import { ExampleComponent } from './home/examples/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ErrorComponent } from './error/error.component';
-import { SuccessComponent } from './success/success.component';
-import { WarningComponent } from './warning/warning.component';
+import { SuccessComponent } from './home/examples/success/success.component';
+import { WarningComponent } from './home/examples/warning/warning.component';
 
-import { Home2Component } from './home2/home2.component';
-import { HeaderComponent } from './home2/header/header.component';
-import { RecipesComponent } from './home2/recipes/recipes.component';
-import { RecipeListComponent } from './home2/recipes/recipe-list/recipe-list.component';
-import { RecipeDetailsComponent } from './home2/recipes/recipe-details/recipe-details.component';
-import { RecipeItemComponent } from './home2/recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './home2/shopping-list/sthopping-list.component';
-import { ShoppingEditComponent } from './home2/shopping-list/shopping-edit/sthopping-edit.component';
-import { UnlessDirective } from './home3/directives/unless/unless.directive';
-import { DropdownDirective } from './home2/shared/dropdown.directive';
+import { Home2Component } from './home/recipes/home2.component';
+import { HeaderComponent } from './home/recipes/header/header.component';
+import { RecipesComponent } from './home/recipes/recipes/recipes.component';
+import { RecipeListComponent } from './home/recipes/recipes/recipe-list/recipe-list.component';
+import { RecipeDetailsComponent } from './home/recipes/recipes/recipe-details/recipe-details.component';
+import { RecipeItemComponent } from './home/recipes/recipes/recipe-list/recipe-item/recipe-item.component';
+import { ShoppingListComponent } from './home/recipes/shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './home/recipes/shopping-list/shopping-edit/sthopping-edit.component';
+import { ShoppingListService } from './home/recipes/shopping-list/shopping-list.service';
+import { DropdownDirective } from './home/recipes/shared/dropdown.directive';
 
-import { Home3Component } from './home3/home3.component';
-import { GameControlComponent } from './home3/game-control/game-control.component';
-import { EvenComponent } from './home3/even/even.component';
-import { OddComponent } from './home3/odd/odd.component';
-import { BasicHighlightDirective } from './home3/directives/basic-highlight/basic-highlight.directive';
-import { BetterHighlightDirective } from './home3/directives/better-highlight/better-highlight.directive';
+import { Home3Component } from './home/game/home3.component';
+import { GameControlComponent } from './home/game/game-control/game-control.component';
+import { EvenComponent } from './home/game/even/even.component';
+import { OddComponent } from './home/game/odd/odd.component';
+import { BasicHighlightDirective } from './home/game/directives/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './home/game/directives/better-highlight/better-highlight.directive';
+import { UnlessDirective } from './home/game/directives/unless/unless.directive';
 
-import { Home4Component } from './home4/home4.component';
-import { AccountsService } from './home4/services/accounts.service';
-import { LoggingService } from './home4/services/logging.service';
-import { AccountComponent } from './home4/account/account.component';
-import { NewAccountComponent } from './home4/new-account/new-account.component';
-import { ActiveUsersComponent } from './home4/active-users/active-users.component';
-import { InactiveUsersComponent } from './home4/inactive-users/inactive-users.component';
-import { UserService } from './home4/services/user.service';
-import { CounterService } from './home4/services/counter.service';
+import { Home4Component } from './home/accounts/home4.component';
+import { AccountsService } from './home/accounts/services/accounts.service';
+import { LoggingService } from './home/accounts/services/logging.service';
+import { AccountComponent } from './home/accounts/account/account.component';
+import { NewAccountComponent } from './home/accounts/new-account/new-account.component';
+import { ActiveUsersComponent } from './home/accounts/active-users/active-users.component';
+import { InactiveUsersComponent } from './home/accounts/inactive-users/inactive-users.component';
+import { UserService } from './home/accounts/services/user.service';
+import { CounterService } from './home/accounts/services/counter.service';
 
+import { HomeComponent } from './home/router/home/home.component';
+import { UsersComponent } from './home/router/users/users.component';
+import { ServersComponent } from './home/router/servers/servers.component';
+import { UserComponent } from './home/router/users/user/user.component';
+import { EditServerComponent } from './home/router/servers/edit-server/edit-server.component';
+import { ServerComponent } from './home/router/servers/server/server.component';
+import { WelcomeComponent } from './home/router/welcome/welcome.component';
+import { ServersService } from './home/router/servers/servers.service';
+
+const appRoutes: Routes =
+[
+  /*{ path: '', component: ExampleComponent, pathMatch: 'full' },*/
+  { path: 'counter', component: CounterComponent },
+  { path: 'fetch-data', component: FetchDataComponent }, { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'users/:id', component: UserComponent },
+  { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id/edit', component: EditServerComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
+    ExampleComponent,
     CounterComponent,
     FetchDataComponent,
     ErrorComponent,
@@ -71,19 +93,22 @@ import { CounterService } from './home4/services/counter.service';
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeComponent,
+    WelcomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [AccountsService, LoggingService, UserService, CounterService],
+  providers: [AccountsService, LoggingService, UserService, CounterService, ShoppingListService, ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

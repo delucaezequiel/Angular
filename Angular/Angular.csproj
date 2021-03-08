@@ -24,33 +24,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\home2\recipes\recipe.model.ts" />
-    <None Remove="ClientApp\src\app\home2\recipes\recipe.service.ts" />
-    <None Remove="ClientApp\src\app\home2\shared\dropdown.directive.ts" />
-    <None Remove="ClientApp\src\app\home2\shared\ingredient.model.ts" />
-    <None Remove="ClientApp\src\app\home2\shopping-list\shopping-list.service.ts" />
-    <None Remove="ClientApp\src\app\home3\directives\basic-highlight\basic-highlight.directive.ts" />
-    <None Remove="ClientApp\src\app\home3\directives\better-highlight\better-highlight.directive.ts" />
-    <None Remove="ClientApp\src\app\home3\directives\unless\unless.directive.ts" />
-    <None Remove="ClientApp\src\app\home4\services\counter.service.ts" />
-    <None Remove="ClientApp\src\app\home4\services\user.service.ts" />
+    <None Remove="ClientApp\src\app\home\recipes\recipes\recipe.model.ts" />
+    <None Remove="ClientApp\src\app\home\recipes\recipes\recipe.service.ts" />
+    <None Remove="ClientApp\src\app\home\recipes\shared\dropdown.directive.ts" />
+    <None Remove="ClientApp\src\app\home\recipes\shared\ingredient.model.ts" />
+    <None Remove="ClientApp\src\app\home\recipes\shopping-list\shopping-list.service.ts" />
+    <None Remove="ClientApp\src\app\home\game\directives\basic-highlight\basic-highlight.directive.ts" />
+    <None Remove="ClientApp\src\app\home\game\directives\better-highlight\better-highlight.directive.ts" />
+    <None Remove="ClientApp\src\app\home\game\directives\unless\unless.directive.ts" />
+    <None Remove="ClientApp\src\app\home\accounts\services\counter.service.ts" />
+    <None Remove="ClientApp\src\app\home\accounts\services\user.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\home2\recipes\recipe.model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home2\recipes\recipe.service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home2\shared\dropdown.directive.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home2\shared\ingredient.model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home2\shopping-list\shopping-list.service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home3\directives\unless\unless.directive.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\home\recipes\recipes\recipe.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\recipes\recipes\recipe.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\recipes\shared\dropdown.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\recipes\shared\ingredient.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\recipes\shopping-list\shopping-list.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\game\directives\unless\unless.directive.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\home3\directives\better-highlight\better-highlight.directive.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\home\game\directives\better-highlight\better-highlight.directive.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\home3\directives\basic-highlight\basic-highlight.directive.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home4\services\counter.service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\home4\services\user.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\game\directives\basic-highlight\basic-highlight.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\accounts\services\counter.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\accounts\services\user.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\routing\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
